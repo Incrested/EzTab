@@ -2,12 +2,23 @@
   "manifest_version": 2,
   "name": "EzTab",
   "description": "Simplistic, Secured New Tabs",
-  "version": "1.0",
+  "version": "1.1",
   "chrome_url_overrides": {
-    "newtab" : "index.html"
+    "newtab" : "window.html"
+  },
+  "icons": {
+	"128": "logo.png"
   },
   "permissions": [
 	"http://*/*",
-	"https://*/*"
-  ]
+	"https://*/*",
+	"activeTab",
+	"storage",
+	"tabs"
+  ],
+  "applications": {
+	"gecko": {
+		"id": "incrested@protonmail.ch"
+	}
+  }
 }

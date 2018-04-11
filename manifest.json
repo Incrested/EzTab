@@ -2,23 +2,32 @@
   "manifest_version": 2,
   "name": "EzTab",
   "description": "Simplistic, Secured New Tabs",
-  "version": "1.1",
+  "version": "1.4.1",
   "chrome_url_overrides": {
     "newtab" : "window.html"
   },
   "icons": {
-	"128": "logo.png"
+	"128": "img/logo.png"
   },
   "permissions": [
-	"http://*/*",
-	"https://*/*",
 	"activeTab",
 	"storage",
 	"tabs"
   ],
-  "applications": {
-	"gecko": {
-		"id": "incrested@protonmail.ch"
-	}
-  }
+  "content_scripts": [{
+		"all_frames": false,
+		"css": [
+			"css/search.css",
+			"css/site.css"
+		],
+		"js": [
+			"js/jquery.js",
+			"js/search.js"
+		],
+		"matches": [
+			"<all_urls>"
+		],
+		"run_at": "document_start"
+  }],
+  "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'"
 }

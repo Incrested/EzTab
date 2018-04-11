@@ -3,24 +3,44 @@
 	<head>
 		<meta charset="UTF-8" />
 		<title> New Tab </title>
+		<link rel="stylesheet" href="css/search.css" type="text/css" />
 		<style>
-			#iframe {
-				width: 100%;
-				height: 100%;
-				margin: 0;
-				position: fixed;
-				top: 0px;
-				left: 0px;
-				bottom: 0px;
-				right: 0px;
-				border: none;
-				padding: 0;
-				overflow: hidden;
-				z-index: 999999;
-			}
+		#logo {
+			width: 200px;
+			height: 200px;
+		}
+		#footer {
+			position: fixed;
+			left: 0px;
+			bottom: 0px;
+			height: 30px;
+			width: 100%;
+			color: white;
+			font-size: 5px;
+		}
+		/* IE 6 */
+		* html #footer {
+			position:absolute;
+			top:expression((0-(footer.offsetHeight)+(document.documentElement.clientHeight ? document.documentElement.clientHeight : document.body.clientHeight)+(ignoreMe = document.documentElement.scrollTop ? document.documentElement.scrollTop : document.body.scrollTop))+'px');
+		}
 		</style>
+		<script src="js/search.js" type="text/javascript"></script>
+		<script src="js/jquery.js" type="text/javascript" class="cssdeck"></script>
 	</head>
 	<body>
-		<iframe src="https://incrested.github.io/EzTab/embed/index.html" id="iframe" class="iframe" frameborder="0" scrolling="auto"></iframe>
+		<div id="body">
+			<div id="header">
+				<p align="center">
+					<img src="img/logo.png" id="logo" />
+				</p>
+			</div>
+			<div class="field" id="searchform">
+				<input type="text" id="searchterm" placeholder="What are you looking for?" />
+				<button type="button" id="search" onclick="search()"><img src="img/search.svg" class="fa fa-search" id="searchBtn" /></button>
+			</div>
+		</div>
+		<div id="footer">
+			<h5> Made by Incrested. </h5>
+		</div>
 	</body>
 </html>

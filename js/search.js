@@ -4,12 +4,13 @@ function search() {
 	window.location = searchURI;
 }
 
-document.getElementById("searchterm") .addEventListener("keyup", function(event) {
-	event.preventDefault();
-	if(event.keyCode == 13) {
-		docuemtn.getElementById("searchBtn").click();
+document.getElementById("searchterm") .addEventListener("keyup", function(e) {
+	e.preventDefault();
+	if(e.keyCode == 13) {
+		document.getElementById("searchBtn").click();
+		search();
 	}
-})
+});
 var searchBtn = document.getElementById("searchBtn");
 searchBtn.addEventListener("click", search);
 
